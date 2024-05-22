@@ -1,4 +1,4 @@
-public class TextColor {
+public class ColorfulConsolePrinter {
 
     private static final String RESET = "\033[0m";
     private static final String RED = "\033[0;31m";
@@ -16,7 +16,7 @@ public class TextColor {
     private static final String CYAN_BOLD = "\033[1;36m";
     private static final String WHITE_BOLD = "\033[1;37m";
 
-    public void displayMessage(String message, String color) {
+    public static String colorMessage(String message, String color) {
         String text;
         switch (color.toLowerCase()) {
             case "red":
@@ -65,6 +65,6 @@ public class TextColor {
                 text = message;
                 break;
         }
-        System.out.println(text);
+        return text;
     }
 }

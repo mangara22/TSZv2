@@ -3,7 +3,13 @@ import java.io.*;
 
 public class DataLoader {
 
-    public void readFile(int gen, Data data, TextColor color) {
+    private Data data;
+
+    public DataLoader(Data userData) {
+        data = userData;
+    }
+
+    public void readFile(int gen) {
         try {
             File f = new File("../code/files/gen" + gen + ".txt");
             Scanner scanner = new Scanner(f);
@@ -18,11 +24,11 @@ public class DataLoader {
             System.exit(-1);
         }
         finally {
-            color.displayMessage("Generation [" + gen + "] Pokémon loaded in!", "white_bold");
+            System.out.println("Generation [" + ColorfulConsolePrinter.colorMessage("" + gen, "white_bold") + "] Pokémon loaded in!");
         }
     }
 
-    public void loadZonePokemon(Data data) {
+    public void loadZonePokemon() {
         Random random = new Random();
         ArrayList<Zone> zones = data.getAllZones();
         ArrayList<Pokemon> allPokemon = data.getAllPokemon();
@@ -34,5 +40,4 @@ public class DataLoader {
             }
         }
     }
-
 }

@@ -5,27 +5,53 @@ public class Data {
     private ArrayList<Pokemon> allPokemon;
     private final String[] zoneNames = {"Desert", "Forest", "Grasslands", "Tundra", "Aquatic"};
     private ArrayList<Zone> allZones;
-    private LinkedList<Pokemon> caughtPokemon;
+    private String selectedRegion;
 
     public Data() {
         allPokemon = new ArrayList<>(50);
-        caughtPokemon = new LinkedList<>();
         allZones = new ArrayList<>(5);
-        int i = 0;
-        for (Zone z : allZones) {
-            z = new Zone(zoneNames[i]);
+        for(int i = 0; i < 5; i++) {
+            allZones.add(new Zone(zoneNames[i]));
         }
+        selectedRegion = "";
     }
 
-    public ArrayList<Pokemon> getAllPokemon() {
-        return allPokemon;
-    }
+    public ArrayList<Pokemon> getAllPokemon() { return allPokemon; }
+    public ArrayList<Zone> getAllZones() { return allZones; }
+    public String getSelectedRegion() { return selectedRegion; }
+    public void setSelectedRegion(int genNum) {
+        switch (genNum) {
+            case 1:
+                selectedRegion = "Kanto";
+                break;
+            case 2:
+                selectedRegion = "Johto";
+                break;
+            case 3:
+                selectedRegion = "Hoenn";
+                break;
+            case 4:
+                selectedRegion = "Sinnoh";
+                break;
+            case 5:
+                selectedRegion = "Unova";
+                break;
+            case 6:
+                selectedRegion = "Kalos";
+                break;
+            case 7:
+                selectedRegion = "Alola";
+                break;
+            case 8:
+                selectedRegion = "Galar";
+                break;
+            case 9:
+                selectedRegion = "Paldea";
+                break;
+            default:
+                selectedRegion = "Unknown";
+                break;
+        }
 
-    public String[] getZoneNames() {
-        return zoneNames;
-    }
-
-    public ArrayList<Zone> getAllZones() {
-        return allZones;
     }
 }
