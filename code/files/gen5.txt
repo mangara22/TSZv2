@@ -1,0 +1,50 @@
+Victini - Psychic/Fire - This Pokémon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.
+Snivy - Grass - It is very intelligent and calm. Being exposed to lots of sunlight makes its movements swifter.
+Servine - Grass - It moves along the ground as if sliding. Its swift movements befuddle its foes, and it then attacks with a vine whip.
+Serperior - Grass - It can stop its opponents’ movements with just a glare. It takes in solar energy and boosts it internally.
+Tepig - Fire - It can deftly dodge its foe’s attacks while shooting fireballs from its nose. It roasts berries before it eats them.
+Pignite - Fire/Fighting - When its internal fire flares up, its movements grow sharper and faster. When in trouble, it emits smoke.
+Emboar - Fire/Fighting - It can throw a fire punch by setting its fists on fire with its fiery chin. It cares deeply about its friends.
+Oshawott - Water - It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.
+Dewott - Water - Strict training is how it learns its flowing double-scalchop technique.
+Samurott - Water - One swing of the sword incorporated in its armor can fell an opponent. A simple glare from one of them quiets everybody.
+Patrat - Normal - Using food stored in cheek pouches, they can keep watch for days. They use their tails to communicate with others.
+Watchog - Normal - When they see an enemy, their tails stand high, and they spit the seeds of berries stored in their cheek pouches.
+Lillipup - Normal - It faces strong opponents with great courage. But, when at a disadvantage in a fight, this intelligent Pokémon flees.
+Herdier - Normal - It has black, cape-like fur that is very hard and decreases the amount of damage it receives.
+Stoutland - Normal - It rescues people stranded by blizzards in the mountains. Its shaggy fur shields it from the cold.
+Purrloin - Dark - They steal from people for fun, but their victims can’t help but forgive them. Their deceptively cute act is perfect.
+Liepard - Dark - These Pokémon vanish and appear unexpectedly. Many Trainers are drawn to their beautiful form and fur.
+Pansage - Grass - This Pokémon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.
+Simisage - Grass - Ill tempered, it fights by swinging its barbed tail around wildly. The leaf growing on its head is very bitter.
+Pansear - Fire - When it is angered, the temperature of its head tuft reaches 600° F. It uses its tuft to roast berries.
+Simisear - Fire - It loves sweets because they become energy for the fire burning inside its body.
+Panpour - Water - The water stored inside the tuft on its head is full of nutrients. Plants that receive its water grow large.
+Simipour - Water - The tuft on its head holds water. When the level runs low, it replenishes the tuft by siphoning up water with its tail.
+Munna - Psychic - Munna always float in the air. People whose dreams are eaten by them forget what the dreams had been about.
+Musharna - Psychic - The mist emanating from their foreheads is packed with the dreams of people and Pokémon.
+Pidove - Normal/Flying - Each follows its Trainer’s orders as best it can, but they sometimes fail to understand complicated commands.
+Tranquill - Normal/Flying - It can return to its Trainer’s location regardless of the distance separating them.
+Unfezant - Normal/Flying - Males swing their head plumage to threaten opponents. The females’ flying abilities surpass those of the males.
+Blitzle - Electric - Its mane shines when it discharges electricity. They use their flashing manes to communicate with one another.
+Zebstrika - Electric - They have lightning-like movements. When Zebstrika run at full speed, the sound of thunder reverberates.
+Roggenrola - Rock - Its ear is hexagonal in shape. Compressed underground, its body is as hard as steel.
+Boldore - Rock - When it overflows with power, the orange crystal on its body glows. It looks for underground water in caves.
+Gigalith - Rock - Compressing the energy from its internal core lets it fire off an attack capable of blowing away a mountain.
+Woobat - Psychic/Flying - Its habitat is dark forests and caves. It emits ultrasonic waves from its nose to learn about its surroundings.
+Swoobat - Psychic/Flying - It emits sound waves of various frequencies from its nose, including some powerful enough to destroy rocks.
+Drilbur - Ground - It can dig through the ground at a speed of 30 mph. It could give a car running aboveground a good race.
+Excadrill - Ground/Steel - It can help in tunnel construction. Its drill has evolved into steel strong enough to bore through iron plates.
+Audino - Normal - It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.
+Timburr - Fighting - It fights by swinging a piece of lumber around. It is close to evolving when it can handle the lumber without difficulty.
+Gurdurr - Fighting - This Pokémon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.
+Conkeldurr - Fighting - It is thought that Conkeldurr taught humans how to make concrete more than 2,000 years ago.
+Tympole - Water - They warn others of danger by vibrating their cheeks to create a high-pitched sound.
+Palpitoad - Water/Ground - When they vibrate the bumps on their heads, they can make waves in water or earthquake-like vibrations on land.
+Seismitoad - Water/Ground - They shoot paralyzing liquid from their head bumps. They use vibration to hurt their opponents.
+Throh - Fighting - When it tightens its belt, it becomes stronger. Wild Throh use vines to weave their own belts.
+Sawk - Fighting - The sound of Sawk punching boulders and trees can be heard all the way from the mountains where they train.
+Sewaddle - Bug/Grass - Leavanny dress it in clothes they made for it when it hatched. It hides its head in its hood while it is sleeping.
+Swadloon - Bug/Grass - Forests where Swadloon live have superb foliage because the nutrients they make from fallen leaves nourish the plant life.
+Leavanny - Bug/Grass - Upon finding a small Pokémon, it weaves clothing for it from leaves, using the cutters on its arms and sticky silk.
+Venipede - Bug/Poison - Its bite injects a potent poison, enough to paralyze large bird Pokémon that try to prey on it.

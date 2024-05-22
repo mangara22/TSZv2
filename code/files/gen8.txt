@@ -1,0 +1,50 @@
+Grookey - Grass - When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.
+Thwackey - Grass - The faster a Thwackey can beat out a rhythm with its two sticks, the more respect it wins from its peers.
+Rillaboom - Grass - By drumming, it taps into the power of its special tree stump. The roots of the stump follow its direction in battle.
+Scorbunny - Fire - A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.
+Raboot - Fire - Its thick and fluffy fur protects it from the cold and enables it to use hotter fire moves.
+Cinderace - Fire - It juggles a pebble with its feet, turning it into a burning soccer ball. Its shots strike opponents hard and leave them scorched.
+Sobble - Water - When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won’t be able to resist weeping.
+Drizzile - Water - A clever combatant, this Pokémon battles using water balloons created with moisture secreted from its palms.
+Inteleon - Water - It has many hidden capabilities, such as fingertips that can shoot water and a membrane on its back that it can use to glide through the air.
+Skwovet - Normal - Found throughout the Galar region, this Pokémon becomes uneasy if its cheeks are ever completely empty of berries.
+Greedent - Normal - It stashes berries in its tail—so many berries that they fall out constantly. But this Pokémon is a bit slow-witted, so it doesn’t notice the loss.
+Rookidee - Flying - It will bravely challenge any opponent, no matter how powerful. This Pokémon benefits from every battle—even a defeat increases its strength a bit.
+Corvisquire - Flying - Smart enough to use tools in battle, these Pokémon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.
+Corviknight - Flying/Steel - This Pokémon reigns supreme in the skies of the Galar region. The black luster of its steel body could drive terror into the heart of any foe.
+Blipbug - Bug - A constant collector of information, this Pokémon is very smart. Very strong is what it isn’t.
+Dottler - Bug/Psychic - It barely moves, but it’s still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.
+Orbeetle - Bug/Psychic - It’s famous for its high level of intelligence, and the large size of its brain is proof that it also possesses immense psychic power.
+Nickit - Dark - Aided by the soft pads on its feet, it silently raids the food stores of other Pokémon. It survives off its ill-gotten gains.
+Thievul - Dark - It secretly marks potential targets with a scent. By following the scent, it stalks its targets and steals from them when they least expect it.
+Gossifleur - Grass - It anchors itself in the ground with its single leg, then basks in the sun. After absorbing enough sunlight, its petals spread as it blooms brilliantly.
+Eldegoss - Grass - The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pokémon can benefit from them.
+Wooloo - Normal - Its curly fleece is such an effective cushion that this Pokémon could fall off a cliff and stand right back up at the bottom, unharmed.
+Dubwool - Normal - Weave a carpet from its springy wool, and you end up with something closer to a trampoline. You’ll start to bounce the moment you set foot on it.
+Chewtle - Water - Apparently the itch of its teething impels it to snap its jaws at anything in front of it.
+Drednaw - Water/Rock - With jaws that can shear through steel rods, this highly aggressive Pokémon chomps down on its unfortunate prey.
+Yamper - Electric - This Pokémon is very popular as a herding dog in the Galar region. As it runs, it generates electricity from the base of its tail.
+Boltund - Electric - This Pokémon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.
+Rolycoly - Rock - Most of its body has the same composition as coal. Fittingly, this Pokémon was first discovered in coal mines about 400 years ago.
+Carkol - Rock/Fire - It forms coal inside its body. Coal dropped by this Pokémon once helped fuel the lives of people in the Galar region.
+Coalossal - Rock/Fire - It’s usually peaceful, but the vandalism of mines enrages it. Offenders will be incinerated with flames that reach 2,700 degrees Fahrenheit.
+Applin - Grass/Dragon - It spends its entire life inside an apple. It hides from its natural enemies, bird Pokémon, by pretending it’s just an apple and nothing more.
+Flapple - Grass/Dragon - It ate a sour apple, and that induced its evolution. In its cheeks, it stores an acid capable of causing chemical burns.
+Appletun - Grass/Dragon - Eating a sweet apple caused its evolution. A nectarous scent wafts from its body, luring in the bug Pokémon it preys on.
+Silicobra - Ground - As it digs, it swallows sand and stores it in its neck pouch. The pouch can hold more than 17 pounds of sand.
+Sandaconda - Ground - When it contracts its body, over 220 pounds of sand sprays from its nose. If it ever runs out of sand, it becomes disheartened.
+Cramorant - Flying/Water - It’s so strong that it can knock out some opponents in a single hit, but it also may forget what it’s battling midfight.
+Arrokuda - Water - If it sees any movement around it, this Pokémon charges for it straightaway, leading with its sharply pointed jaw. It’s very proud of that jaw.
+Barraskewda - Water - This Pokémon has a jaw that’s as sharp as a spear and as strong as steel. Apparently Barraskewda’s flesh is surprisingly tasty, too.
+Toxel - Electric/Poison - It stores poison in an internal poison sac and secretes that poison through its skin. If you touch this Pokémon, a tingling sensation follows.
+Toxtricity - Electric/Poison - When this Pokémon sounds as if it’s strumming a guitar, it’s actually clawing at the protrusions on its chest to generate electricity.
+Sizzlipede - Fire/Bug - It stores flammable gas in its body and uses it to generate heat. The yellow sections on its belly get particularly hot.
+Centiskorch - Fire/Bug - When it heats up, its body temperature reaches about 1,500 degrees Fahrenheit. It lashes its body like a whip and launches itself at enemies.
+Clobbopus - Fighting - It’s very curious, but its means of investigating things is to try to punch them with its tentacles. The search for food is what brings it onto land.
+Grapploct - Fighting - A body made up of nothing but muscle makes the grappling moves this Pokémon performs with its tentacles tremendously powerful.
+Sinistea - Ghost - The swirl pattern in this Pokémon’s body is its weakness. If it gets stirred, the swirl loses its shape, and Sinistea gets dizzy.
+Polteageist - Ghost - Trainers Polteageist trusts will be allowed to experience its distinctive flavor and aroma firsthand by sampling just a tiny bit of its tea.
+Hatenna - Psychic - Via the protrusion on its head, it senses other creatures’ emotions. If you don’t have a calm disposition, it will never warm up to you.
+Hattrem - Psychic - No matter who you are, if you bring strong emotions near this Pokémon, it will silence you violently.
+Hatterene - Psychic/Fairy - It emits psychic power strong enough to cause headaches as a deterrent to the approach of others.
+Impidimp - Dark/Fairy - Through its nose, it sucks in the emanations produced by people and Pokémon when they feel annoyed. It thrives off this negative energy.

@@ -1,0 +1,50 @@
+Chespin - Grass - The quills on its head are usually soft. When it flexes them, the points become so hard and sharp that they can pierce rock.
+Quilladin - Grass - It relies on its sturdy shell to deflect predators’ attacks. It counterattacks with its sharp quills.
+Chesnaught - Grass/Fighting - Its Tackle is forceful enough to flip a 50-ton tank. It shields its allies from danger with its own body.
+Fennekin - Fire - Eating a twig fills it with energy, and its roomy ears give vent to air hotter than 390 degrees Fahrenheit.
+Braixen - Fire - It has a twig stuck in its tail. With friction from its tail fur, it sets the twig on fire and launches into battle.
+Delphox - Fire/Psychic - It gazes into the flame at the tip of its branch to achieve a focused state, which allows it to see into the future.
+Froakie - Water - It secretes flexible bubbles from its chest and back. The bubbles reduce the damage it would otherwise take when attacked.
+Frogadier - Water - It can throw bubble-covered pebbles with precise control, hitting empty cans up to a hundred feet away.
+Greninja - Water/Dark - It creates throwing stars out of compressed water. When it spins them and throws them at high speed, these stars can split metal in two.
+Bunnelby - Normal - They use their large ears to dig burrows. They will dig the whole night through.
+Diggersby - Normal/Ground - With their powerful ears, they can heft boulders of a ton or more with ease. They can be a big help at construction sites.
+Fletchling - Normal/Flying - These friendly Pokémon send signals to one another with beautiful chirps and tail-feather movements.
+Fletchinder - Fire/Flying - From its beak, it expels embers that set the tall grass on fire. Then it pounces on the bewildered prey that pop out of the grass.
+Talonflame - Fire/Flying - In the fever of an exciting battle, it showers embers from the gaps between its feathers and takes to the air.
+Scatterbug - Bug - When under attack from bird Pokémon, it spews a poisonous black powder that causes paralysis on contact.
+Spewpa - Bug - It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.
+Vivillon - Bug/Flying - Vivillon with many different patterns are found all over the world. These patterns are affected by the climate of their habitat.
+Litleo - Fire/Normal - The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.
+Pyroar - Fire/Normal - The male with the largest mane of fire is the leader of the pride.
+Flabébé - Fairy - It draws out and controls the hidden power of flowers. The flower Flabébé holds is most likely part of its body.
+Floette - Fairy - It flutters around fields of flowers and cares for flowers that are starting to wilt. It draws out the hidden power of flowers to battle.
+Florges - Fairy - It claims exquisite flower gardens as its territory, and it obtains power from basking in the energy emitted by flowering plants.
+Skiddo - Grass - Thought to be one of the first Pokémon to live in harmony with humans, it has a placid disposition.
+Gogoat - Grass - It can tell how its Trainer is feeling by subtle shifts in the grip on its horns. This empathic sense lets them run as if one being.
+Pancham - Fighting - It does its best to be taken seriously by its enemies, but its glare is not sufficiently intimidating. Chewing on a leaf is its trademark.
+Pangoro - Fighting/Dark - Although it possesses a violent temperament, it won’t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.
+Furfrou - Normal - Trimming its fluffy fur not only makes it more elegant but also increases the swiftness of its movements.
+Espurr - Psychic - The organ that emits its intense psychic power is sheltered by its ears to keep power from leaking out.
+Meowstic - Psychic - When in danger, it raises its ears and releases enough psychic power to grind a 10-ton truck into dust.
+Honedge - Steel/Ghost - Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.
+Doublade - Steel/Ghost - When Honedge evolves, it divides into two swords, which cooperate via telepathy to coordinate attacks and slash their enemies to ribbons.
+Aegislash - Steel/Ghost - Generations of kings were attended by these Pokémon, which used their spectral power to manipulate and control people and Pokémon.
+Spritzee - Fairy - It emits a scent that enraptures those who smell it. This fragrance changes depending on what it has eaten.
+Aromatisse - Fairy - It devises various scents, pleasant and unpleasant, and emits scents that its enemies dislike in order to gain an edge in battle.
+Swirlix - Fairy - To entangle its opponents in battle, it extrudes white threads as sweet and sticky as cotton candy.
+Slurpuff - Fairy - It can distinguish the faintest of scents. It puts its sensitive sense of smell to use by helping pastry chefs in their work.
+Inkay - Dark/Psychic - Opponents who stare at the flashing of the light-emitting spots on its body become dazed and lose their will to fight.
+Malamar - Dark/Psychic - It wields the most compelling hypnotic powers of any Pokémon, and it forces others to do whatever it wants.
+Binacle - Rock/Water - Two Binacle live together on one rock. When they fight, one of them will move to a different rock.
+Barbaracle - Rock/Water - When they evolve, two Binacle multiply into seven. They fight with the power of seven Binacle.
+Skrelp - Poison/Water - Camouflaged as rotten kelp, they spray liquid poison on prey that approaches unawares and then finish it off.
+Dragalge - Poison/Dragon - Their poison is strong enough to eat through the hull of a tanker, and they spit it indiscriminately at anything that enters their territory.
+Clauncher - Water - They knock down flying prey by firing compressed water from their massive claws like shooting a pistol.
+Clawitzer - Water - Their enormous claws launch cannonballs of water powerful enough to pierce tanker hulls.
+Helioptile - Electric/Normal - They make their home in deserts. They can generate their energy from basking in the sun, so eating food is not a requirement.
+Heliolisk - Electric/Normal - They flare their frills and generate energy. A single Heliolisk can generate sufficient electricity to power a skyscraper.
+Tyrunt - Rock/Dragon - This Pokémon was restored from a fossil. If something happens that it doesn’t like, it throws a tantrum and runs wild.
+Tyrantrum - Rock/Dragon - Thanks to its gargantuan jaws, which could shred thick metal plates as if they were paper, it was invincible in the ancient world it once inhabited.
+Amaura - Rock/Ice - This ancient Pokémon was restored from part of its body that had been frozen in ice for over 100 million years.
+Aurorus - Rock/Ice - The diamond-shaped crystals on its body expel air as cold as -240 degrees Fahrenheit, surrounding its enemies and encasing them in ice.

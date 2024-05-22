@@ -1,0 +1,50 @@
+Bulbasaur - Grass/Poison - A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.
+Ivysaur - Grass/Poison - When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.
+Venusaur - Grass/Poison - The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.
+Charmander - Fire - Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.
+Charmeleon - Fire - When it swings its burning tail, it elevates the temperature to unbearably high levels.
+Charizard - Fire/Flying - Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.
+Squirtle - Water - After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.
+Wartortle - Water - Often hides in water to stalk unwary prey. For swimming fast, it moves its ears to maintain balance.
+Blastoise - Water - A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.
+Caterpie - Bug - Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.
+Metapod - Bug - This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body.
+Butterfree - Bug/Flying - In battle, it flaps its wings at high speed to release highly toxic dust into the air.
+Weedle - Bug/Poison - Often found in forests, eating leaves. It has a sharp venomous stinger on its head.
+Kakuna - Bug/Poison - Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators.
+Beedrill - Bug/Poison - Flies at high speed and attacks using its large venomous stingers on its forelegs and tail.
+Pidgey - Normal/Flying - A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.
+Pidgeotto - Normal/Flying - Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder.
+Pidgeot - Normal/Flying - When hunting, it skims the surface of water at high speed to pick off unwary prey such as MAGIKARP.
+Rattata - Normal - Bites anything when it attacks. Small and very quick, it is a common sight in many places.
+Raticate - Normal - It uses its whiskers to maintain its balance. It apparently slows down if they are cut off.
+Spearow - Normal/Flying - Eats bugs in grassy areas. It has to flap its short wings at high speed to stay airborne.
+Fearow - Normal/Flying - With its huge and magnificent wings, it can keep aloft without ever having to land for rest.
+Ekans - Poison - Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole.
+Arbok - Poison - It is rumored that the ferocious warning markings on its belly differ from area to area.
+Pikachu - Electric - When several of these POKéMON gather, their electricity could build and cause lightning storms.
+Raichu - Electric - Its long tail serves as a ground to protect itself from its own high voltage power.
+Sandshrew - Ground - Burrows deep underground in arid locations far from water. It only emerges to hunt for food.
+Sandslash - Ground - Curls up into a spiny ball when threatened. It can roll while curled up to attack or escape.
+Nidoran♀ - Poison - Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns.
+Nidorina - Poison - The female’s horn develops slowly. Prefers physical attacks such as clawing and biting.
+Nidoqueen - Poison/Ground - Its hard scales provide strong protection. It uses its hefty bulk to execute powerful moves.
+Nidoran♂ - Poison - Stiffens its ears to sense danger. The larger its horns, the more powerful its secreted venom.
+Nidorino - Poison - An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom.
+Nidoking - Poison/Ground - It uses its powerful tail in battle to smash, constrict, then break the prey’s bones.
+Clefairy - Fairy - Its magical and cute appeal has many admirers. It is rare and found only in certain areas.
+Clefable - Fairy - A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people.
+Vulpix - Fire - At the time of birth, it has just one tail. The tail splits from its tip as it grows older.
+Ninetales - Fire - Very smart and very vengeful. Grabbing one of its many tails could result in a 1000-year curse.
+Jigglypuff - Normal/Fairy - When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep.
+Wigglytuff - Normal/Fairy - The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.
+Zubat - Poison/Flying - Forms colonies in perpetually dark places. Uses ultrasonic waves to identify and approach targets.
+Golbat - Poison/Flying - Once it strikes, it will not stop draining energy from the victim even if it gets too heavy to fly.
+Oddish - Grass/Poison - During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds.
+Gloom - Grass/Poison - The fluid that oozes from its mouth isn’t drool. It is a nectar that is used to attract prey.
+Vileplume - Grass/Poison - The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up.
+Paras - Bug/Grass - Burrows to suck tree roots. The mushrooms on its back grow by drawing nutrients from the bug host.
+Parasect - Bug/Grass - A host-parasite pair in which the parasite mushroom has taken over the host bug. Prefers damp places.
+Venonat - Bug/Poison - Lives in the shadows of tall trees where it eats insects. It is attracted by light at night.
+Venomoth - Bug/Poison - The dust-like scales covering its wings are color coded to indicate the kinds of poison it has.
+Diglett - Ground - Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground.
