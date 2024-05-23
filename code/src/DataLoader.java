@@ -5,11 +5,10 @@ public class DataLoader {
 
     private Data data;
 
-    public DataLoader(Data userData) {
-        data = userData;
-    }
+    public DataLoader(Data userData) { data = userData; }
 
     public void readFile(int gen) {
+        ColorfulConsolePrinter printer = new ColorfulConsolePrinter();
         try {
             File f = new File("../code/files/gen" + gen + ".txt");
             Scanner scanner = new Scanner(f);
@@ -24,7 +23,7 @@ public class DataLoader {
             System.exit(-1);
         }
         finally {
-            System.out.println("Generation [" + ColorfulConsolePrinter.colorMessage("" + gen, "white_bold") + "] Pokémon loaded in!");
+            System.out.println("Generation [" + printer.colorMessage("" + gen, "white_bold") + "] Pokémon loaded in!");
         }
     }
 

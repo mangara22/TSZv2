@@ -3,9 +3,16 @@ import java.util.*;
 public class Data {
 
     private ArrayList<Pokemon> allPokemon;
+
     private final String[] zoneNames = {"Desert", "Forest", "Grasslands", "Tundra", "Aquatic"};
+
     private ArrayList<Zone> allZones;
+
     private String selectedRegion;
+
+    private int totalSteps;
+
+    private Zone currentZone;
 
     public Data() {
         allPokemon = new ArrayList<>(50);
@@ -14,11 +21,15 @@ public class Data {
             allZones.add(new Zone(zoneNames[i]));
         }
         selectedRegion = "";
+        totalSteps = 0;
     }
 
     public ArrayList<Pokemon> getAllPokemon() { return allPokemon; }
+
     public ArrayList<Zone> getAllZones() { return allZones; }
+
     public String getSelectedRegion() { return selectedRegion; }
+
     public void setSelectedRegion(int genNum) {
         switch (genNum) {
             case 1:
@@ -52,6 +63,13 @@ public class Data {
                 selectedRegion = "Unknown";
                 break;
         }
-
     }
+
+    public int getTotalSteps() { return totalSteps; }
+
+    public void incrementTotalSteps() { totalSteps++; }
+
+    public Zone getCurrentZone() { return currentZone; }
+
+    public void setCurrentZone(Zone newZone) { currentZone = newZone; }
 }

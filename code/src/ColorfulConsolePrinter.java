@@ -1,22 +1,24 @@
 public class ColorfulConsolePrinter {
 
-    private static final String RESET = "\033[0m";
-    private static final String RED = "\033[0;31m";
-    private static final String GREEN = "\033[0;32m";
-    private static final String YELLOW = "\033[0;33m";
-    private static final String BLUE = "\033[0;34m";
-    private static final String PURPLE = "\033[0;35m";
-    private static final String CYAN = "\033[0;36m";
-    private static final String WHITE = "\033[0;37m";
-    private static final String RED_BOLD = "\033[1;31m";
-    private static final String GREEN_BOLD = "\033[1;32m";
-    private static final String YELLOW_BOLD = "\033[1;33m";
-    private static final String BLUE_BOLD = "\033[1;34m";
-    private static final String PURPLE_BOLD = "\033[1;35m";
-    private static final String CYAN_BOLD = "\033[1;36m";
-    private static final String WHITE_BOLD = "\033[1;37m";
+    private final String RESET = "\033[0m";
+    private final String RED = "\033[0;31m";
+    private final String GREEN = "\033[0;32m";
+    private final String YELLOW = "\033[0;33m";
+    private final String BLUE = "\033[0;34m";
+    private final String PURPLE = "\033[0;35m";
+    private final String CYAN = "\033[0;36m";
+    private final String WHITE = "\033[0;37m";
+    private final String RED_BOLD = "\033[1;31m";
+    private final String GREEN_BOLD = "\033[1;32m";
+    private final String YELLOW_BOLD = "\033[1;33m";
+    private final String BLUE_BOLD = "\033[1;34m";
+    private final String PURPLE_BOLD = "\033[1;35m";
+    private final String CYAN_BOLD = "\033[1;36m";
+    private final String WHITE_BOLD = "\033[1;37m";
 
-    public static String colorMessage(String message, String color) {
+    public ColorfulConsolePrinter() {}
+
+    public String colorMessage(String message, String color) {
         String text;
         switch (color.toLowerCase()) {
             case "red":

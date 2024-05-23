@@ -3,14 +3,17 @@ import java.util.*;
 public class Inventory {
 
     private LinkedList<Pokemon> caughtPokemon;
+
     private int pokeballs;
+
     private int berries;
+
     private int bait;
+
     private int mud;
-    private int displayRates;
 
     public enum ItemType {
-        POKEBALL, BERRY, BAIT, MUD, DISPLAYRATES
+        POKEBALL, BERRY, BAIT, MUD
     }
 
     public Inventory() {
@@ -19,7 +22,6 @@ public class Inventory {
         berries = 5;
         bait = 20;
         mud = 20;
-        displayRates = 10;
     }
 
     public int getItemCount(ItemType itemType) {
@@ -32,8 +34,6 @@ public class Inventory {
                 return bait;
             case MUD:
                 return mud;
-            case DISPLAYRATES:
-                return displayRates;
             default:
                 return -1;
         }
@@ -53,9 +53,6 @@ public class Inventory {
             case MUD:
                 mud++;
                 break;
-            case DISPLAYRATES:
-                displayRates++;
-                break;
         }
     }
 
@@ -73,9 +70,31 @@ public class Inventory {
             case MUD:
                 mud--;
                 break;
-            case DISPLAYRATES:
-                displayRates--;
+        }
+    }
+
+    public String getItemDescription(ItemType itemType) {
+        String desc = "";
+        switch (itemType) {
+            case POKEBALL:
+                desc = "A device for catching wild Pokémon. It’s thrown like a ball at a Pokémon, " +
+                        "comfortably encapsulating its target.";
+                break;
+            case BERRY:
+                desc = "A berry will increase a Pokémon's catch rate and decrease a Pokémon's flee rate.";
+                break;
+            case BAIT:
+                desc = "Bait will decrease a Pokémon's catch rate and flee rate.";
+                break;
+            case MUD:
+                desc = "Mud will increase a Pokémon's catch rate and flee rate.";
                 break;
         }
+        return desc;
+
+    }
+
+    public LinkedList<Pokemon> getCaughtPokemon() {
+        return caughtPokemon;
     }
 }

@@ -1,7 +1,9 @@
 public class Pokemon {
 
     private final String name;
+
     private final String type;
+
     private final String desc;
 
     public Pokemon(String[] data) {
@@ -10,19 +12,11 @@ public class Pokemon {
         desc = data[2];
     }
 
-    public String toString() {
-        return name + " [" + type + "]";
-    }
+    public String toString() { return name + " [" + type + "]"; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
-    public String getDesc() {
-        return desc;
-    }
+    public String getDesc() { return desc; }
 }
