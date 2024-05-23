@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -62,51 +60,60 @@ public class Display {
                 userData.getTotalSteps(), "white_bold"));
         System.out.println("Total Pokémon caught: " + printer.colorMessage("" +
                 userInventory.getCaughtPokemon().size(), "white_bold"));
-        System.out.println("Total pokéballs: " + printer.colorMessage("" +
+    }
+
+    private void displayInventory() {
+        String pbDesc = userInventory.getItemDescription(Inventory.ItemType.POKEBALL);
+        String baitDesc = userInventory.getItemDescription(Inventory.ItemType.BAIT);
+        String mudDesc = userInventory.getItemDescription(Inventory.ItemType.MUD);
+        String berryDesc = userInventory.getItemDescription(Inventory.ItemType.BERRY);
+        System.out.println("Number of pokéballs: " + printer.colorMessage("" +
                 userInventory.getItemCount(Inventory.ItemType.POKEBALL), "white_bold"));
-        System.out.println("Total bait: " + printer.colorMessage("" +
+        System.out.println(printer.colorMessage(pbDesc, "white"));
+        System.out.println("Number of bait: " + printer.colorMessage("" +
                 userInventory.getItemCount(Inventory.ItemType.BAIT), "white_bold"));
-        System.out.println("Total mud: " + printer.colorMessage("" +
+        System.out.println(printer.colorMessage(baitDesc, "white"));
+        System.out.println("Number of mud: " + printer.colorMessage("" +
                 userInventory.getItemCount(Inventory.ItemType.MUD), "white_bold"));
-        System.out.println("Total berries: " + printer.colorMessage("" +
+        System.out.println(printer.colorMessage(mudDesc, "white"));
+        System.out.println("Number of berries: " + printer.colorMessage("" +
                 userInventory.getItemCount(Inventory.ItemType.BERRY), "white_bold"));
+        System.out.println(printer.colorMessage(berryDesc, "white"));
         displaySafariPokemon();
     }
 
     private void options() {
         scanner = new Scanner(System.in);
         System.out.println(printer.colorMessage("+========OPTIONS========+", "yellow_bold"));
-        System.out.print(prompt + "Move(M) Look(L) Stats(S): ");
+        System.out.print(prompt + "Move(M) Stats(S) Inventory(I): ");
         String choice = scanner.nextLine().toUpperCase();
-        if (choice.equals("M") || choice.equals("L")) {
-            System.out.print("You take a step...");
-            delay(500);
-            switch (logic.movementOrLook()) {
-                case 0:
-                    System.out.println(printer.colorMessage("Nothing there.", "white"));
-                case 1:
-                    System.out.println(printer.colorMessage("You found a pokéball!", "red"));
-                    break;
-                case 3:
-                    System.out.println(printer.colorMessage("You found a piece of bait!", "red"));
-                    break;
-                case 5:
-                    System.out.println(printer.colorMessage("You found a ball of mud!", "red"));
-                    break;
-                case 6:
-                    System.out.println(printer.colorMessage("You found a berry!", "red"));
-                    break;
-                case 10:
-                    System.out.println(printer.colorMessage("It's a wild encounter!", "yellow"));
-                    break;
+        switch (choice) {
+            case "M" -> {
+                System.out.print("You take a step...");
+                delay(500);
+                int val = logic.movement();
+                switch (val) {
+                    case 0 -> System.out.println(printer.colorMessage("Nothing there.", "white"));
+                    case 1 -> System.out.println(printer.colorMessage("You found a pokéball!", "red"));
+                    case 3 -> System.out.println(printer.colorMessage("You found a piece of bait!", "red"));
+                    case 5 -> System.out.println(printer.colorMessage("You found a ball of mud!", "red"));
+                    case 6 -> System.out.println(printer.colorMessage("You found a berry!", "red"));
+                    case 10 -> {
+                        System.out.println(printer.colorMessage("It's a wild encounter!", "yellow"));
+                        Pokemon opponent = userData.getCurrentZone().getZonePokemon().get(random.nextInt(10));
+                        String opponentName = printer.colorMessage(opponent.getName(), "red_bold");
+                        System.out.println("A wild " + opponentName + " has appeared!");
+                        Encounter encounter = new Encounter(userInventory, opponent);
+                        encounter.wildEncounter();
+                    }
+                }
             }
-        }
-        else if (choice.equals("S")) {
-            displayStats();
-        }
-        else {
-            System.out.println(printer.colorMessage("No valid option selected, defaulting to Stats.", "white"));
-            displayStats();
+            case "S" -> displayStats();
+            case "I" -> displayInventory();
+            default -> {
+                System.out.println(printer.colorMessage("No valid option selected, defaulting to Stats.", "white"));
+                displayStats();
+            }
         }
     }
 
@@ -151,7 +158,9 @@ public class Display {
             }
             Zone currentZone = userData.getCurrentZone();
             System.out.println("Entering the " + currentZone.getZoneName() + " zone!");
+            delay(1000);
             System.out.println(printer.colorMessage(currentZone.getZoneDesc(), currentZone.getZoneColor()));
+            delay(1500);
             System.out.println(printer.colorMessage("Pokémon in this zone: ", "white"));
             for (Pokemon p : currentZone.getZonePokemon()) {
                 System.out.println(printer.colorMessage(p.toString(), currentZone.getZoneColor()));
@@ -177,13 +186,14 @@ public class Display {
             status = logic.isGameOver(userData.getTotalSteps());
         }
         if (status == -1) {
-            System.out.println(printer.colorMessage("You have no more pokéballs left!", "red_bold"));
+            System.out.println(printer.colorMessage("You ran out of pokéballs, try again next time!", "red_bold"));
         }
         else if (status == 1) {
             System.out.println(printer.colorMessage("Limit of 100 steps has been reached!", "red_bold"));
         }
         System.out.println(printer.colorMessage("Your adventure has ended.", "yellow_bold"));
         displayStats();
+        displayInventory();
         long end = System.currentTimeMillis();
         long timeSpent = end - start;
         long minutes = TimeUnit.MILLISECONDS.toMinutes(timeSpent);

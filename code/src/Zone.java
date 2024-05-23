@@ -6,7 +6,7 @@ public class Zone {
 
     private final ColorfulConsolePrinter printer = new ColorfulConsolePrinter();
 
-    private ArrayList<Pokemon> zonePokemon;
+    private final ArrayList<Pokemon> zonePokemon;
 
     private String zoneColor;
 
@@ -14,7 +14,7 @@ public class Zone {
 
     public Zone(String name) {
         zoneName = name;
-        zonePokemon = new ArrayList<>();
+        zonePokemon = new ArrayList<>(10);
         zoneSetUp();
     }
 
@@ -28,31 +28,31 @@ public class Zone {
 
     public void zoneSetUp() {
         switch (zoneName) {
-            case "Desert":
+            case "Desert" -> {
                 zoneName = printer.colorMessage(zoneName, "yellow_bold");
                 zoneColor = "yellow";
                 zoneDesc = "All you see are hills of sand...lots of sand...";
-                break;
-            case "Forest":
+            }
+            case "Forest" -> {
                 zoneName = printer.colorMessage(zoneName, "purple_bold");
                 zoneColor = "purple";
                 zoneDesc = "You enter a lush forest area...";
-                break;
-            case "Grasslands":
+            }
+            case "Grasslands" -> {
                 zoneName = printer.colorMessage(zoneName, "green_bold");
                 zoneColor = "green";
                 zoneDesc = "You see a big grassy open area, with towering mountains in the distance...";
-                break;
-            case "Tundra":
+            }
+            case "Tundra" -> {
                 zoneName = printer.colorMessage(zoneName, "cyan_bold");
                 zoneColor = "cyan";
                 zoneDesc = "It's..really..cold..here...";
-                break;
-            case "Aquatic":
+            }
+            case "Aquatic" -> {
                 zoneName = printer.colorMessage(zoneName, "blue_bold");
                 zoneColor = "blue";
                 zoneDesc = "You see nothing but a few beaches, deserted islands, and a lot of water...";
-                break;
+            }
         }
     }
 }

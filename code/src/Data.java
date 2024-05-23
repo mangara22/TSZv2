@@ -2,11 +2,9 @@ import java.util.*;
 
 public class Data {
 
-    private ArrayList<Pokemon> allPokemon;
+    private final ArrayList<Pokemon> allPokemon;
 
-    private final String[] zoneNames = {"Desert", "Forest", "Grasslands", "Tundra", "Aquatic"};
-
-    private ArrayList<Zone> allZones;
+    private final ArrayList<Zone> allZones;
 
     private String selectedRegion;
 
@@ -17,6 +15,7 @@ public class Data {
     public Data() {
         allPokemon = new ArrayList<>(50);
         allZones = new ArrayList<>(5);
+        String[] zoneNames = {"Desert", "Forest", "Grasslands", "Tundra", "Aquatic"};
         for(int i = 0; i < 5; i++) {
             allZones.add(new Zone(zoneNames[i]));
         }
@@ -32,36 +31,16 @@ public class Data {
 
     public void setSelectedRegion(int genNum) {
         switch (genNum) {
-            case 1:
-                selectedRegion = "Kanto";
-                break;
-            case 2:
-                selectedRegion = "Johto";
-                break;
-            case 3:
-                selectedRegion = "Hoenn";
-                break;
-            case 4:
-                selectedRegion = "Sinnoh";
-                break;
-            case 5:
-                selectedRegion = "Unova";
-                break;
-            case 6:
-                selectedRegion = "Kalos";
-                break;
-            case 7:
-                selectedRegion = "Alola";
-                break;
-            case 8:
-                selectedRegion = "Galar";
-                break;
-            case 9:
-                selectedRegion = "Paldea";
-                break;
-            default:
-                selectedRegion = "Unknown";
-                break;
+            case 1 -> selectedRegion = "Kanto";
+            case 2 -> selectedRegion = "Johto";
+            case 3 -> selectedRegion = "Hoenn";
+            case 4 -> selectedRegion = "Sinnoh";
+            case 5 -> selectedRegion = "Unova";
+            case 6 -> selectedRegion = "Kalos";
+            case 7 -> selectedRegion = "Alola";
+            case 8 -> selectedRegion = "Galar";
+            case 9 -> selectedRegion = "Paldea";
+            default -> selectedRegion = "Unknown";
         }
     }
 

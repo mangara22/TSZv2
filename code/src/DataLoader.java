@@ -3,7 +3,7 @@ import java.io.*;
 
 public class DataLoader {
 
-    private Data data;
+    private final Data data;
 
     public DataLoader(Data userData) { data = userData; }
 

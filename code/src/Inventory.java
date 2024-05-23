@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Inventory {
 
-    private LinkedList<Pokemon> caughtPokemon;
+    private final LinkedList<Pokemon> caughtPokemon;
 
     private int pokeballs;
 
@@ -25,72 +25,40 @@ public class Inventory {
     }
 
     public int getItemCount(ItemType itemType) {
-        switch (itemType) {
-            case POKEBALL:
-                return pokeballs;
-            case BERRY:
-                return berries;
-            case BAIT:
-                return bait;
-            case MUD:
-                return mud;
-            default:
-                return -1;
-        }
+        return switch (itemType) {
+            case POKEBALL -> pokeballs;
+            case BERRY -> berries;
+            case BAIT -> bait;
+            case MUD -> mud;
+        };
     }
 
     public void incrementItem(ItemType itemType) {
         switch (itemType) {
-            case POKEBALL:
-                pokeballs++;
-                break;
-            case BERRY:
-                berries++;
-                break;
-            case BAIT:
-                bait++;
-                break;
-            case MUD:
-                mud++;
-                break;
+            case POKEBALL -> pokeballs++;
+            case BERRY -> berries++;
+            case BAIT -> bait++;
+            case MUD -> mud++;
         }
     }
 
     public void decrementItem(ItemType itemType) {
         switch (itemType) {
-            case POKEBALL:
-                pokeballs--;
-                break;
-            case BERRY:
-                berries--;
-                break;
-            case BAIT:
-                bait--;
-                break;
-            case MUD:
-                mud--;
-                break;
+            case POKEBALL -> pokeballs--;
+            case BERRY -> berries--;
+            case BAIT -> bait--;
+            case MUD -> mud--;
         }
     }
 
     public String getItemDescription(ItemType itemType) {
-        String desc = "";
-        switch (itemType) {
-            case POKEBALL:
-                desc = "A device for catching wild Pokémon. It’s thrown like a ball at a Pokémon, " +
-                        "comfortably encapsulating its target.";
-                break;
-            case BERRY:
-                desc = "A berry will increase a Pokémon's catch rate and decrease a Pokémon's flee rate.";
-                break;
-            case BAIT:
-                desc = "Bait will decrease a Pokémon's catch rate and flee rate.";
-                break;
-            case MUD:
-                desc = "Mud will increase a Pokémon's catch rate and flee rate.";
-                break;
-        }
-        return desc;
+        return switch (itemType) {
+            case POKEBALL -> "A device for catching wild Pokémon. It’s thrown like a ball at a Pokémon, " +
+                    "comfortably encapsulating its target.";
+            case BERRY -> "A berry will increase a Pokémon's catch rate and decrease a Pokémon's flee rate.";
+            case BAIT -> "Bait will decrease a Pokémon's catch rate and flee rate.";
+            case MUD -> "Mud will increase a Pokémon's catch rate and flee rate.";
+        };
 
     }
 

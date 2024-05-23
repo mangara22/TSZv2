@@ -2,9 +2,9 @@ import java.util.*;
 
 public class GameLogic {
 
-    private Data userData;
+    private final Data userData;
 
-    private Inventory userInventory;
+    private final Inventory userInventory;
 
     private final Random random = new Random();
 
@@ -29,7 +29,7 @@ public class GameLogic {
         userData.setCurrentZone(currentZone);
     }
 
-    public int movementOrLook() {
+    public int movement() {
         int encounter = random.nextInt(2); //0 for no encounter, 1 for an encounter
         int item = random.nextInt(8); //0-1 for pokéball, 2-3 for bait, 4-5 for mud, 6 for berry, 7 no item
         if (encounter == 1) {

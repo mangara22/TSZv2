@@ -16,7 +16,5 @@ public class Pokemon {
 
     public String getName() { return name; }
 
-    public String getType() { return type; }
-
     public String getDesc() { return desc; }
 }
