@@ -1,130 +1,153 @@
-import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.util.Random;
 
-public class Encounter {
+public class Encounter extends JFrame {
 
     private final Inventory userInventory;
-
     private final Pokemon opponent;
-
-    private final Random random = new Random();
-
-    private final ColorfulConsolePrinter printer = new ColorfulConsolePrinter();
+    private JTextArea textArea;
+    private JButton catchButton, baitButton, mudButton, berryButton, infoButton, runButton;
+    private int fleeRate;
+    private int catchRate;
 
     public Encounter(Inventory userInventory, Pokemon p) {
+        Random random = new Random();
         this.userInventory = userInventory;
-        opponent = p;
+        this.opponent = p;
+        initUI();
+        fleeRate = random.nextInt(6); // >= 4 flees
+        catchRate = random.nextInt(5); //>= 3 catches
     }
 
-    private void delay(int milliseconds) {
-        try{
-            Thread.sleep(milliseconds);
-        }
-        catch(InterruptedException e){
-            e.printStackTrace();
-        }
+    private void initUI() {
+        setTitle("WILD ENCOUNTER");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JPanel panel = new JPanel(new BorderLayout());
+        textArea = new JTextArea();
+        textArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(textArea);
+
+        JPanel buttonPanel = new JPanel(new GridLayout(2, 3));
+        catchButton = new JButton("Catch");
+        baitButton = new JButton("Bait");
+        mudButton = new JButton("Mud");
+        berryButton = new JButton("Berry");
+        infoButton = new JButton("Info");
+        runButton = new JButton("Run");
+
+        buttonPanel.add(catchButton);
+        buttonPanel.add(baitButton);
+        buttonPanel.add(mudButton);
+        buttonPanel.add(berryButton);
+        buttonPanel.add(infoButton);
+        buttonPanel.add(runButton);
+
+        panel.add(scrollPane, BorderLayout.CENTER);
+        panel.add(buttonPanel, BorderLayout.SOUTH);
+        add(panel);
+
+        catchButton.addActionListener(e -> handleCatch());
+        baitButton.addActionListener(e -> handleBait());
+        mudButton.addActionListener(e -> handleMud());
+        berryButton.addActionListener(e -> handleBerry());
+        infoButton.addActionListener(e -> displayInfo());
+        runButton.addActionListener(e -> runAway());
+
+        setTitle("WILD ENCOUNTER - " + opponent.nameAndType());
+        setVisible(true);
+        appendToTextArea("A wild " + opponent.getName() + " has appeared!");
     }
 
-    private String encounterOptions() {
-        String prompt = printer.colorMessage(">>", "yellow_bold");
-        Scanner scanner = new Scanner(System.in);
-        if (userInventory.getCaughtPokemon().contains(opponent)) {
-            System.out.println(printer.colorMessage("*---*---*" + opponent + "*---*---*", "red"));
-            System.out.println(printer.colorMessage("Already caught.", "white"));
-        }
-        else System.out.println(printer.colorMessage("---------" + opponent + "---------", "red"));
-        System.out.print(prompt + "What would you like to do? Catch(C) Bait(T) Mud(M) Berry(B) Info(I) Run(R): ");
-        return scanner.nextLine().toUpperCase();
+    private void appendToTextArea(String message) {
+        textArea.append(message + "\n");
+        textArea.setCaretPosition(textArea.getDocument().getLength());
+        textArea.revalidate();
+        textArea.repaint();
     }
 
-    public void wildEncounter() {
-        int fleeRate = random.nextInt(6); // >= 4 flees
-        int catchRate = random.nextInt(5); // >=3 catches
-        label:
-        while (true) {
-            String choice = encounterOptions();
-            String oppoName = printer.colorMessage(opponent.getName(), "red");
-            switch (choice) {
-                case "C":
-                    if (userInventory.getItemCount(Inventory.ItemType.POKEBALL) > 0) {
-                        System.out.println("You threw a pokéball...");
-                        userInventory.decrementItem(Inventory.ItemType.POKEBALL);
-                        delay(1000);
-                        for (int i = 1; i <= 3; i++) {
-                            System.out.print(i + "..");
-                            delay(500);
-                        }
-                        if (fleeRate >= 4) {
-                            System.out.println(oppoName + " is too quick and ran away!");
-                            break label;
-                        } else if (catchRate >= 3) {
-                            System.out.println("you caught " + oppoName + "!");
-                            userInventory.getCaughtPokemon().add(opponent);
-                            break label;
-                        }
-                        System.out.println(oppoName + " broke out of the pokéball!");
-                        catchRate--;
-                        fleeRate++;
-                    } else {
-                        System.out.println(printer.colorMessage("You have no more pokéballs left!", "yellow"));
-                        break label;
-                    }
-                    break;
-                case "T":
-                    if (userInventory.getItemCount(Inventory.ItemType.BAIT) > 0) {
-                        System.out.println("You threw some bait...");
-                        userInventory.decrementItem(Inventory.ItemType.BAIT);
-                        delay(1000);
-                        if (fleeRate >= 4) {
-                            System.out.println(oppoName + " is too quick and ran away!");
-                            break label;
-                        }
-                        fleeRate--;
-                        catchRate--;
-                    } else {
-                        System.out.println(printer.colorMessage("You have no more bait left!", "yellow"));
-                        break label;
-                    }
-                    break;
-                case "M":
-                    if (userInventory.getItemCount(Inventory.ItemType.MUD) > 0) {
-                        System.out.println("You threw some mud...");
-                        userInventory.decrementItem(Inventory.ItemType.MUD);
-                        delay(1000);
-                        if (fleeRate >= 4) {
-                            System.out.println(oppoName + " is too quick and ran away!");
-                            break label;
-                        }
-                        catchRate++;
-                        fleeRate++;
-                    } else {
-                        System.out.println(printer.colorMessage("You have no more mud left!", "yellow"));
-                        break label;
-                    }
-                    break;
-                case "B":
-                    if (userInventory.getItemCount(Inventory.ItemType.BERRY) > 0) {
-                        System.out.println("You threw a berry...");
-                        userInventory.decrementItem(Inventory.ItemType.BERRY);
-                        delay(1000);
-                        if (fleeRate >= 4) {
-                            System.out.println(oppoName + " is too quick and ran away!");
-                            break label;
-                        }
-                        catchRate++;
-                        fleeRate--;
-                    } else {
-                        System.out.println(printer.colorMessage("You have no more berries left!", "yellow"));
-                        break label;
-                    }
-                    break;
-                case "I":
-                    System.out.println(printer.colorMessage("Here is a description of the opposing Pokémon: ", "white"));
-                    System.out.println(printer.colorMessage(opponent.getDesc(), "red"));
-                    break;
-                case "R":
-                    System.out.println("You ran away from " + oppoName + ".");
-                    break label;
+    private void handleCatch() {
+        if (userInventory.getItemCount(Inventory.ItemType.POKEBALL) > 0) {
+            appendToTextArea("You threw a pokéball...");
+            userInventory.decrementItem(Inventory.ItemType.POKEBALL);
+            if (fleeRate >= 4) {
+                appendToTextArea(opponent.getName() + " is too quick and ran away!");
+                dispose();
+            } else if (catchRate >= 3) {
+                appendToTextArea("You caught " + opponent.getName() + "!");
+                userInventory.getCaughtPokemon().add(opponent);
+                dispose();
+            } else {
+                appendToTextArea(opponent.getName() + " broke out of the pokéball!");
+                fleeRate++;
+                catchRate--;
             }
+        } else {
+            appendToTextArea("You have no more pokéballs left!");
         }
+    }
+
+    private void handleBait() {
+        if (userInventory.getItemCount(Inventory.ItemType.BAIT) > 0) {
+            appendToTextArea("You threw some bait...");
+            userInventory.decrementItem(Inventory.ItemType.BAIT);
+            if (fleeRate >= 4) {
+                appendToTextArea(opponent.getName() + " is too quick and ran away!");
+                dispose();
+            } else {
+                appendToTextArea(opponent.getName() + " is distracted by the bait, intrigued by it.");
+                catchRate--;
+                fleeRate--;
+            }
+        } else {
+            appendToTextArea("You have no more bait left!");
+        }
+    }
+
+    private void handleMud() {
+        if (userInventory.getItemCount(Inventory.ItemType.MUD) > 0) {
+            appendToTextArea("You threw some mud...");
+            userInventory.decrementItem(Inventory.ItemType.MUD);
+            if (fleeRate >= 4) {
+                appendToTextArea(opponent.getName() + " is too quick and ran away!");
+                dispose();
+            } else {
+                appendToTextArea(opponent.getName() + " is angered by the mud and wants to flee!");
+                fleeRate++;
+                catchRate++;
+            }
+        } else {
+            appendToTextArea("You have no more mud left!");
+        }
+    }
+
+    private void handleBerry() {
+        if (userInventory.getItemCount(Inventory.ItemType.BERRY) > 0) {
+            appendToTextArea("You threw a berry...");
+            userInventory.decrementItem(Inventory.ItemType.BERRY);
+            if (fleeRate >= 4) {
+                appendToTextArea(opponent.getName() + " is too quick and ran away!");
+                dispose();
+            } else {
+                appendToTextArea(opponent.getName() + " enjoys the berries, munching on them happily!");
+                catchRate++;
+                fleeRate--;
+            }
+        } else {
+            appendToTextArea("You have no more berries left!");
+        }
+    }
+
+    private void displayInfo() {
+        appendToTextArea(">> Here is a description of the opposing Pokémon: ");
+        appendToTextArea(opponent.getDesc());
+    }
+
+    private void runAway() {
+        appendToTextArea("You ran away from " + opponent.getName() + ".");
+        dispose();
     }
 }

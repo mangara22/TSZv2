@@ -53,11 +53,10 @@ public class Inventory {
 
     public String getItemDescription(ItemType itemType) {
         return switch (itemType) {
-            case POKEBALL -> "A device for catching wild Pokémon. It’s thrown like a ball at a Pokémon, " +
-                    "comfortably encapsulating its target.";
-            case BERRY -> "A berry will increase a Pokémon's catch rate and decrease a Pokémon's flee rate.";
-            case BAIT -> "Bait will decrease a Pokémon's catch rate and flee rate.";
-            case MUD -> "Mud will increase a Pokémon's catch rate and flee rate.";
+            case POKEBALL -> "A device for catching wild Pokémon.\n";
+            case BERRY -> "A berry will increase a Pokémon's catch rate and decrease a Pokémon's flee rate.\n";
+            case BAIT -> "Bait will decrease a Pokémon's catch rate and flee rate.\n";
+            case MUD -> "Mud will increase a Pokémon's catch rate and flee rate.\n";
         };
 
     }

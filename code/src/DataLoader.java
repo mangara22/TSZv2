@@ -8,7 +8,6 @@ public class DataLoader {
     public DataLoader(Data userData) { data = userData; }
 
     public void readFile(int gen) {
-        ColorfulConsolePrinter printer = new ColorfulConsolePrinter();
         try {
             File f = new File("../code/files/gen" + gen + ".txt");
             Scanner scanner = new Scanner(f);
@@ -21,9 +20,6 @@ public class DataLoader {
             System.out.println("File Not Found!");
             e.printStackTrace();
             System.exit(-1);
-        }
-        finally {
-            System.out.println("Generation [" + printer.colorMessage("" + gen, "white_bold") + "] Pokémon loaded in!");
         }
     }
 
