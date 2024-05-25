@@ -2,30 +2,25 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Class to create a GUI for the user's statistics.
+ * @author Michael Angara
+ */
 public class StatsGUI extends JFrame {
-
-    private final Inventory userInventory;
-
-    private final Data userData;
 
     private final long start, end;
 
+    /**
+     * Constructor for the StatsGUI class.
+     * @param userInventory inventory object to display
+     * @param userData data object to display
+     * @param start start time of the game
+     * @param end current time of the game
+     */
     public StatsGUI(Inventory userInventory, Data userData, long start, long end) {
-        this.userInventory = userInventory;
-        this.userData = userData;
         this.start = start;
         this.end = end;
-        initUI();
-    }
 
-    private String calculateTime() {
-        long timeSpent = end - start;
-        long minutes = TimeUnit.MILLISECONDS.toMinutes(timeSpent);
-        long seconds = (TimeUnit.MILLISECONDS.toSeconds(timeSpent)) % 60;
-        return "Time spent adventuring: " + minutes + " minute(s), " + seconds + " second(s)";
-    }
-
-    private void initUI() {
         setTitle("STATISTICS");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -59,5 +54,16 @@ public class StatsGUI extends JFrame {
         add(panel);
 
         setVisible(true);
+    }
+
+    /**
+     * Calculates the amount of time elapsed between the start and the current time.
+     * @return string containing the time spend adventuring in minutes and seconds
+     */
+    private String calculateTime() {
+        long timeSpent = end - start;
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(timeSpent);
+        long seconds = (TimeUnit.MILLISECONDS.toSeconds(timeSpent)) % 60;
+        return "Time spent adventuring: " + minutes + " minute(s), " + seconds + " second(s)";
     }
 }

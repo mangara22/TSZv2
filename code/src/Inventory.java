@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * Class to store game specific items, such as pokéballs.
+ * @author Michael Angara
+ */
 public class Inventory {
 
     private final LinkedList<Pokemon> caughtPokemon;
@@ -16,6 +20,9 @@ public class Inventory {
         POKEBALL, BERRY, BAIT, MUD
     }
 
+    /**
+     * Constructor for the Inventory class, initializes all items with a set amount.
+     */
     public Inventory() {
         caughtPokemon = new LinkedList<>();
         pokeballs = 30;
@@ -24,6 +31,11 @@ public class Inventory {
         mud = 20;
     }
 
+    /**
+     * Gets the current number of items.
+     * @param itemType a special datatype that represents a POKEBALL, BERRY, BAIT, or MUD
+     * @return integer representing the quantity of the item
+     */
     public int getItemCount(ItemType itemType) {
         return switch (itemType) {
             case POKEBALL -> pokeballs;
@@ -33,6 +45,10 @@ public class Inventory {
         };
     }
 
+    /**
+     * Increments the current number of an item by one.
+     * @param itemType a special datatype that represents a POKEBALL, BERRY, BAIT, or MUD
+     */
     public void incrementItem(ItemType itemType) {
         switch (itemType) {
             case POKEBALL -> pokeballs++;
@@ -42,6 +58,10 @@ public class Inventory {
         }
     }
 
+    /**
+     * Decrements the current number of an item by one.
+     * @param itemType a special datatype that represents a POKEBALL, BERRY, BAIT, or MUD
+     */
     public void decrementItem(ItemType itemType) {
         switch (itemType) {
             case POKEBALL -> pokeballs--;
@@ -51,6 +71,11 @@ public class Inventory {
         }
     }
 
+    /**
+     * Gets the item's description.
+     * @param itemType a special datatype that represents a POKEBALL, BERRY, BAIT, or MUD
+     * @return a string containing the given item's description
+     */
     public String getItemDescription(ItemType itemType) {
         return switch (itemType) {
             case POKEBALL -> "A device for catching wild Pokémon.\n";
@@ -60,5 +85,9 @@ public class Inventory {
         };
     }
 
+    /**
+     * Gets the list of Pokémon the user caught.
+     * @return a linked list of Pokémon
+     */
     public LinkedList<Pokemon> getCaughtPokemon() { return caughtPokemon; }
 }

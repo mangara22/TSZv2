@@ -1,16 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class to create a GUI for the user's inventory.
+ * @author Michael Angara
+ */
 public class InventoryGUI extends JFrame {
 
-    private final Inventory userInventory;
-
+    /**
+     * Constructor for the InventoryGUI class.
+     * @param userInventory inventory object to display
+     */
     public InventoryGUI(Inventory userInventory) {
-        this.userInventory = userInventory;
-        initUI();
-    }
-
-    private void initUI() {
         setTitle("INVENTORY");
         setSize(725, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

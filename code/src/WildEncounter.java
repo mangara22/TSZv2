@@ -4,25 +4,34 @@ import java.util.Random;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+/**
+ * Class to handle the logic for a wild encounter and display a GUI.
+ * @author Michael Angara
+ */
 public class WildEncounter extends JFrame {
 
     private final Inventory userInventory;
 
     private final Pokemon opponent;
 
-    private JTextArea textArea;
+    private final JTextArea textArea;
 
     private int fleeRate;
 
     private int catchRate;
 
+    /**
+     * Constructor for the WildEncounter class, also starts the wild encounter.
+     * @param userInventory inventory object to access
+     * @param p opposing Pokémon
+     * @param onCloseCallback type Runnable to assist with re-enabling main GUI buttons after an encounter is done
+     */
     public WildEncounter(Inventory userInventory, Pokemon p, Runnable onCloseCallback) {
         Random random = new Random();
         this.userInventory = userInventory;
         this.opponent = p;
-        initUI();
         fleeRate = random.nextInt(6); // >= 4 flees
-        catchRate = random.nextInt(5); //>= 3 catches
+        catchRate = random.nextInt(5); // >= 3 catches
 
         addWindowListener(new WindowAdapter() {
             @Override
@@ -30,11 +39,8 @@ public class WildEncounter extends JFrame {
                 onCloseCallback.run();
             }
         });
-    }
 
-    private void initUI() {
-        setTitle("WILD ENCOUNTER");
-        setSize(400, 300);
+        setSize(700, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -46,7 +52,7 @@ public class WildEncounter extends JFrame {
         JPanel buttonPanel = new JPanel(new GridLayout(2, 3));
         JButton catchButton, baitButton, mudButton, berryButton, runButton;
         catchButton = new JButton("Catch");
-        catchButton.setToolTipText("Use a pokéball.");
+        catchButton.setToolTipText("Throw a pokéball.");
         catchButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
 
         baitButton = new JButton("Bait");
@@ -99,11 +105,18 @@ public class WildEncounter extends JFrame {
         }
     }
 
+    /**
+     * Helper function to append text to the JTextArea with newlines.
+     * @param message text to append to the text area.
+     */
     private void appendToTextArea(String message) {
         textArea.append(message + "\n");
         textArea.setCaretPosition(textArea.getDocument().getLength());
     }
 
+    /**
+     * Allows the user to throw a pokéball to try and catch the opposing Pokémon.
+     */
     private void usePokeball() {
         if (userInventory.getItemCount(Inventory.ItemType.POKEBALL) > 0) {
             userInventory.decrementItem(Inventory.ItemType.POKEBALL);
@@ -127,6 +140,9 @@ public class WildEncounter extends JFrame {
         }
     }
 
+    /**
+     * Allows the user to throw a piece of bait to try and distract the opposing Pokémon.
+     */
     private void useBait() {
         if (userInventory.getItemCount(Inventory.ItemType.BAIT) > 0) {
             userInventory.decrementItem(Inventory.ItemType.BAIT);
@@ -146,6 +162,9 @@ public class WildEncounter extends JFrame {
         }
     }
 
+    /**
+     * Allows the user to throw a ball of mud to try and annoy the opposing Pokémon.
+     */
     private void useMud() {
         if (userInventory.getItemCount(Inventory.ItemType.MUD) > 0) {
             userInventory.decrementItem(Inventory.ItemType.MUD);
@@ -165,6 +184,9 @@ public class WildEncounter extends JFrame {
         }
     }
 
+    /**
+     * Allows the user to throw a berry to try to make the opposing Pokémon more happy.
+     */
     private void useBerry() {
         if (userInventory.getItemCount(Inventory.ItemType.BERRY) > 0) {
             userInventory.decrementItem(Inventory.ItemType.BERRY);

@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
+/**
+ * Main GUI class that handles the start of the game and overall gameplay.
+ * @author Michael Angara
+ */
 public class GUI extends JFrame {
 
     private Inventory userInventory;
@@ -22,8 +26,10 @@ public class GUI extends JFrame {
 
     private long startTime;
 
+    /**
+     * Constructor for the GUI class, sets up main GUI window with buttons.
+     */
     public GUI() {
-        setTitle("SAFARI ZONE");
         setSize(750, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -63,19 +69,28 @@ public class GUI extends JFrame {
         buttonPanel.setBackground(new Color(127, 124, 175));
         add(panel);
 
-        moveButton.addActionListener(e -> handleMoveOrLook());
-        statsButton.addActionListener(e -> new StatsGUI(userInventory, userData, startTime, System.currentTimeMillis()));
+        moveButton.addActionListener(e -> handleMovement());
+        statsButton.addActionListener(e -> new StatsGUI(userInventory, userData,
+                startTime, System.currentTimeMillis()));
         inventoryButton.addActionListener(e -> new InventoryGUI(userInventory));
         endButton.addActionListener(e -> endWindow());
 
         welcome();
     }
 
+    /**
+     * Helper function to append text to the JTextArea with newlines.
+     * @param message text to append to the text area.
+     */
     private void appendToTextArea(String message) {
         textArea.append(message + "\n");
         textArea.setCaretPosition(textArea.getDocument().getLength());
     }
 
+    /**
+     * Sets the main buttons to be disabled or re-enabled.
+     * @param set boolean value to set the buttons to
+     */
     private void setButtons(boolean set) {
         moveButton.setEnabled(set);
         statsButton.setEnabled(set);
@@ -83,23 +98,27 @@ public class GUI extends JFrame {
         endButton.setEnabled(set);
     }
 
-    private void reEnableButtons() {
-        setButtons(true);
-    }
+    /**
+     * A Runnable that is called when a WildEncounter window is closed. This sets the main buttons to
+     * be re-enabled.
+     */
+    private void enableButtons() { setButtons(true); }
 
+    /**
+     * Checks to see if the user can randomly enter a new zone and change the current zone. This will show an
+     * alert notifying the user of the zone change along with a description of it and its pokémon.
+     */
     private void checkZone() {
         int randomTarget = random.nextInt(10, 21);
         if (zoneChange) {
-            appendToTextArea("+========NEW ZONE ALERT========+");
             Zone currentZone = userData.getCurrentZone();
-            appendToTextArea("Entering the " + currentZone.getZoneName() + " zone!");
-            appendToTextArea(currentZone.getZoneDesc());
+            JOptionPane.showMessageDialog(this, "New Zone Alert!\n" +
+                    "Entering the " + currentZone.getZoneName() + " zone!\n" + currentZone.getZoneDesc());
             appendToTextArea("Pokémon in this zone: ");
             for (Pokemon p : currentZone.getZonePokemon()) {
                 appendToTextArea(p.nameAndType());
             }
             zoneChange = false;
-            appendToTextArea("+========NEW ZONE ALERT========+");
         }
         if (steps == randomTarget) {
             steps = 0;
@@ -107,7 +126,11 @@ public class GUI extends JFrame {
         }
     }
 
-    private void handleMoveOrLook() {
+    /**
+     * Handles all movement based on logic.movement()'s return value, handling encounters and items. This function
+     * also keeps track of game over status.
+     */
+    private void handleMovement() {
         int val = logic.movement();
         switch (val) {
             case 0 -> appendToTextArea(">> Nothing there.");
@@ -119,7 +142,7 @@ public class GUI extends JFrame {
                 appendToTextArea(">> It's a wild encounter!");
                 Pokemon opponent = userData.getCurrentZone().getZonePokemon().get(random.nextInt(10));
                 setButtons(false);
-                new WildEncounter(userInventory, opponent, this::reEnableButtons);
+                new WildEncounter(userInventory, opponent, this::enableButtons);
             }
         }
         steps++;
@@ -130,15 +153,20 @@ public class GUI extends JFrame {
         }
     }
 
+    /**
+     * Function that displays the main GUI along with the option to load in a specific Pokémon generation.
+     */
     private void welcome() {
         appendToTextArea("You will enter the Safari Zone with 30 pokéballs along with some bait, mud, and berries.");
         appendToTextArea("Your adventure will end when you run out of pokéballs or when you exceed 100 steps.");
         userInventory = new Inventory();
         userData = new Data();
         DataLoader loader = new DataLoader(userData);
-        int genChoice = Integer.parseInt(JOptionPane.showInputDialog(this, "Which Pokémon Generation do you want to play? (1-9): "));
+        int genChoice = Integer.parseInt(JOptionPane.showInputDialog(this,
+                "Which Pokémon Generation do you want to play? (1-9): "));
         while (genChoice < 1 || genChoice > 9) {
-            genChoice = Integer.parseInt(JOptionPane.showInputDialog(this, "Which Pokémon Generation do you want to play? (1-9): "));
+            genChoice = Integer.parseInt(JOptionPane.showInputDialog(this,
+                    "Which Pokémon Generation do you want to play? (1-9): "));
         }
         loader.readFile(genChoice);
         loader.loadZonePokemon();
@@ -148,22 +176,35 @@ public class GUI extends JFrame {
         gameplay();
     }
 
+    /**
+     * Function that is called after the user starts the Safari Zone, this function starts the time and
+     * creates a new GameLogic instance to handle game logic.
+     */
     private void gameplay() {
         startTime = System.currentTimeMillis();
         logic = new GameLogic(userData, userInventory);
         logic.chooseRandomZone();
     }
 
+    /**
+     * Function that handles the end of the Safari Zone. This function shows a message dialog of why the game ended.
+     * @param status integer value that represents why the game ended
+     */
     private void endGame(int status) {
+        String reason = "";
         if (status == -1) {
-            appendToTextArea("You ran out of pokéballs, try again next time!");
-        } else if (status == 1) {
-            appendToTextArea("Limit of 100 steps has been reached!");
+            reason += "\nYou used up all of your pokéballs.";
         }
-        appendToTextArea("Your time in the Safari Zone has ended.");
+        else if (status == 1) {
+            reason += "\nYou reached the limit of 100 steps.";
+        }
+        JOptionPane.showMessageDialog(this, "Your time in the Safari Zone has ended." + reason);
         endWindow();
     }
 
+    /**
+     * Function that closes the main window and shows the Stats window upon game over.
+     */
     private void endWindow() {
         dispose();
         new StatsGUI(userInventory, userData, startTime, System.currentTimeMillis());
