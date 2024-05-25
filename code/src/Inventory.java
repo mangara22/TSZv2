@@ -58,10 +58,7 @@ public class Inventory {
             case BAIT -> "Decrease catch rate and flee rate.\n";
             case MUD -> "Increases catch rate and flee rate.\n";
         };
-
     }
 
-    public LinkedList<Pokemon> getCaughtPokemon() {
-        return caughtPokemon;
-    }
+    public LinkedList<Pokemon> getCaughtPokemon() { return caughtPokemon; }
 }

@@ -30,11 +30,9 @@ public class Pokemon {
     }
 
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        result.append(name + " [" + type + "]").append("\n");
-        result.append("Personality: " + characteristic).append("\n");
-        result.append("Held Item: " + heldItem).append("\n");
-        return result.toString();
+        return name + " [" + type + "]" + "\n" +
+                "Personality: " + characteristic + "\n" +
+                "Held Item: " + heldItem + "\n";
     }
 
     public String nameAndType() { return name + " [" + type + "]"; }

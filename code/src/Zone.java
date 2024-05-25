@@ -18,7 +18,7 @@ public class Zone {
 
     public ArrayList<Pokemon> getZonePokemon() { return zonePokemon; }
 
-    public String getZoneDesc() {return zoneDesc; }
+    public String getZoneDesc() { return zoneDesc; }
 
     public void zoneSetUp() {
         switch (zoneName) {

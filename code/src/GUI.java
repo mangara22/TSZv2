@@ -14,7 +14,7 @@ public class GUI extends JFrame {
 
     private final JTextArea textArea;
 
-    private JButton moveButton, statsButton, inventoryButton, endButton;
+    private final JButton moveButton, statsButton, inventoryButton, endButton;
 
     private boolean zoneChange = true;
 

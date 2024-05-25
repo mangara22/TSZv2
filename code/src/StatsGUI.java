@@ -4,11 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 public class StatsGUI extends JFrame {
 
-    private Inventory userInventory;
+    private final Inventory userInventory;
 
-    private Data userData;
+    private final Data userData;
 
-    private long start, end;
+    private final long start, end;
 
     public StatsGUI(Inventory userInventory, Data userData, long start, long end) {
         this.userInventory = userInventory;

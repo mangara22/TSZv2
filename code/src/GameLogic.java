@@ -34,22 +34,22 @@ public class GameLogic {
         int item = random.nextInt(8); //0-1 for pokéball, 2-3 for bait, 4-5 for mud, 6 for berry, 7 no item
         if (encounter == 1) {
             userData.incrementTotalSteps();
-            return 10; // a wild encounter!
+            return 10;
         }
         if (item == 0 || item == 1) {
             userInventory.incrementItem(Inventory.ItemType.POKEBALL);
-            return 1; // found a pokéball
+            return 1;
         } else if (item == 2 || item == 3) {
             userInventory.incrementItem(Inventory.ItemType.BAIT);
-            return 3; // found bait
+            return 3;
         }
         else if (item == 4 || item == 5) {
             userInventory.incrementItem(Inventory.ItemType.MUD);
-            return 5; // found mud
+            return 5;
         }
         else if (item == 6) {
             userInventory.incrementItem(Inventory.ItemType.BERRY);
-            return 6; // found berries
+            return 6;
         }
         else {
             userData.incrementTotalSteps();

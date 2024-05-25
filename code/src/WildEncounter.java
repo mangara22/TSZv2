@@ -7,10 +7,13 @@ import java.awt.event.WindowEvent;
 public class WildEncounter extends JFrame {
 
     private final Inventory userInventory;
+
     private final Pokemon opponent;
+
     private JTextArea textArea;
-    private JButton catchButton, baitButton, mudButton, berryButton, infoButton, runButton;
+
     private int fleeRate;
+
     private int catchRate;
 
     public WildEncounter(Inventory userInventory, Pokemon p, Runnable onCloseCallback) {
@@ -41,6 +44,7 @@ public class WildEncounter extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
 
         JPanel buttonPanel = new JPanel(new GridLayout(2, 3));
+        JButton catchButton, baitButton, mudButton, berryButton, runButton;
         catchButton = new JButton("Catch");
         catchButton.setToolTipText("Use a pokéball.");
         catchButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
@@ -57,10 +61,6 @@ public class WildEncounter extends JFrame {
         berryButton.setToolTipText("Feed a berry.");
         berryButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
 
-        infoButton = new JButton("Info");
-        infoButton.setToolTipText("Show Pokémon description.");
-        infoButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
-
         runButton = new JButton("Run");
         runButton.setToolTipText("Immediately run from this wild encounter.");
         runButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
@@ -69,7 +69,6 @@ public class WildEncounter extends JFrame {
         buttonPanel.add(baitButton);
         buttonPanel.add(mudButton);
         buttonPanel.add(berryButton);
-        buttonPanel.add(infoButton);
         buttonPanel.add(runButton);
 
         panel.add(scrollPane, BorderLayout.CENTER);
@@ -81,12 +80,13 @@ public class WildEncounter extends JFrame {
         baitButton.addActionListener(e -> useBait());
         mudButton.addActionListener(e -> useMud());
         berryButton.addActionListener(e -> useBerry());
-        infoButton.addActionListener(e -> displayInfo());
         runButton.addActionListener(e -> dispose());
 
         setTitle("WILD ENCOUNTER - " + opponent.nameAndType());
         setVisible(true);
         appendToTextArea("A wild " + opponent.getName() + " has appeared!");
+        appendToTextArea("+--------DESCRIPTION--------+");
+        appendToTextArea(opponent.getDesc());
 
         if (userInventory.getItemCount(Inventory.ItemType.BAIT) <= 0) {
             baitButton.setEnabled(false);
@@ -182,10 +182,5 @@ public class WildEncounter extends JFrame {
             JOptionPane.showMessageDialog(this, "You have no more berries left!");
             dispose();
         }
-    }
-
-    private void displayInfo() {
-        JOptionPane.showMessageDialog(this,
-                "Here is a description of " + opponent.getName() + ":\n" + opponent.getDesc());
     }
 }
