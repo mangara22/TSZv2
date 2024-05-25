@@ -16,6 +16,9 @@ public class Inventory {
 
     private int mud;
 
+    /**
+     * Custom type to represent items used.
+     */
     public enum ItemType {
         POKEBALL, BERRY, BAIT, MUD
     }
