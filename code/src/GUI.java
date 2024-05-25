@@ -1,52 +1,72 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class GUI extends JFrame {
+
     private Inventory userInventory;
+
     private GameLogic logic;
+
     private final Random random = new Random();
+
     private Data userData = null;
+
+    private final JTextArea textArea;
+
+    private JButton moveButton, statsButton, inventoryButton, endButton;
+
     private boolean zoneChange = true;
+
     private int steps = 0;
-    private JTextArea textArea;
-    private JButton moveButton;
-    private JButton statsButton;
-    private JButton inventoryButton;
-    private JButton pokemonButton;
+
     private long startTime;
 
     public GUI() {
         setTitle("SAFARI ZONE");
-        setSize(750, 600);
+        setSize(750, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel(new BorderLayout());
         textArea = new JTextArea();
         textArea.setEditable(false);
+        textArea.setFont(new Font("Century Gothic", Font.PLAIN, 14));
         JScrollPane scrollPane = new JScrollPane(textArea);
 
         JPanel buttonPanel = new JPanel(new FlowLayout());
+        buttonPanel.setOpaque(true);
+
         moveButton = new JButton("Move Around");
+        moveButton.setToolTipText("Take a step and see if something happens.");
+        moveButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
+
         statsButton = new JButton("Show Stats");
+        statsButton.setToolTipText("Shows the statistics of this adventure.");
+        statsButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
+
         inventoryButton = new JButton("Look at Inventory");
-        pokemonButton = new JButton("See caught Pokémon");
+        inventoryButton.setToolTipText("Look at the items in your inventory.");
+        inventoryButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
+
+        endButton = new JButton("Quit");
+        endButton.setToolTipText("End this adventure early.");
+        endButton.setFont(new Font("Century Gothic", Font.BOLD, 12));
 
         buttonPanel.add(moveButton);
         buttonPanel.add(statsButton);
         buttonPanel.add(inventoryButton);
-        buttonPanel.add(pokemonButton);
+        buttonPanel.add(endButton);
 
         panel.add(scrollPane, BorderLayout.CENTER);
         panel.add(buttonPanel, BorderLayout.SOUTH);
+        buttonPanel.setBackground(new Color(127, 124, 175));
         add(panel);
 
         moveButton.addActionListener(e -> handleMoveOrLook());
-        statsButton.addActionListener(e -> displayStats());
-        inventoryButton.addActionListener(e -> displayInventory());
-        pokemonButton.addActionListener(e -> displaySafariPokemon());
+        statsButton.addActionListener(e -> new StatsGUI(userInventory, userData, startTime, System.currentTimeMillis()));
+        inventoryButton.addActionListener(e -> new InventoryGUI(userInventory));
+        endButton.addActionListener(e -> endWindow());
 
         welcome();
     }
@@ -54,50 +74,37 @@ public class GUI extends JFrame {
     private void appendToTextArea(String message) {
         textArea.append(message + "\n");
         textArea.setCaretPosition(textArea.getDocument().getLength());
-        textArea.revalidate();
-        textArea.repaint();
     }
 
-    private void displayTime(long minutes, long seconds) {
-        appendToTextArea("Total time spent adventuring: " + minutes + " minute(s), " + seconds + " second(s)");
+    private void setButtons(boolean set) {
+        moveButton.setEnabled(set);
+        statsButton.setEnabled(set);
+        inventoryButton.setEnabled(set);
+        endButton.setEnabled(set);
     }
 
-    private void displaySafariPokemon() {
-        appendToTextArea("\n+========YOUR SAFARI POKÉMON========+");
-        if (userInventory.getCaughtPokemon().isEmpty()) {
-            appendToTextArea("No Pokémon caught yet.");
-        } else {
-            for (Pokemon p : userInventory.getCaughtPokemon()) {
-                appendToTextArea(p.toString());
+    private void reEnableButtons() {
+        setButtons(true);
+    }
+
+    private void checkZone() {
+        int randomTarget = random.nextInt(10, 21);
+        if (zoneChange) {
+            appendToTextArea("+========NEW ZONE ALERT========+");
+            Zone currentZone = userData.getCurrentZone();
+            appendToTextArea("Entering the " + currentZone.getZoneName() + " zone!");
+            appendToTextArea(currentZone.getZoneDesc());
+            appendToTextArea("Pokémon in this zone: ");
+            for (Pokemon p : currentZone.getZonePokemon()) {
+                appendToTextArea(p.nameAndType());
             }
+            zoneChange = false;
+            appendToTextArea("+========NEW ZONE ALERT========+");
         }
-        appendToTextArea("+========YOUR SAFARI POKÉMON========+");
-    }
-
-    private void displayStats() {
-        appendToTextArea("\n+========STATS========+");
-        appendToTextArea("Chosen region: " + userData.getSelectedRegion());
-        appendToTextArea("Current zone: " + userData.getCurrentZone().getZoneName());
-        appendToTextArea("Current steps: " + userData.getTotalSteps());
-        appendToTextArea("Total Pokémon caught: " + userInventory.getCaughtPokemon().size());
-        appendToTextArea("+========STATS========+");
-    }
-
-    private void displayInventory() {
-        String pbDesc = userInventory.getItemDescription(Inventory.ItemType.POKEBALL);
-        String baitDesc = userInventory.getItemDescription(Inventory.ItemType.BAIT);
-        String mudDesc = userInventory.getItemDescription(Inventory.ItemType.MUD);
-        String berryDesc = userInventory.getItemDescription(Inventory.ItemType.BERRY);
-        appendToTextArea("\n+========INVENTORY========+");
-        appendToTextArea("Pokéballs - " + userInventory.getItemCount(Inventory.ItemType.POKEBALL));
-        appendToTextArea(pbDesc);
-        appendToTextArea("Bait - " + userInventory.getItemCount(Inventory.ItemType.BAIT));
-        appendToTextArea(baitDesc);
-        appendToTextArea("Mud - " + userInventory.getItemCount(Inventory.ItemType.MUD));
-        appendToTextArea(mudDesc);
-        appendToTextArea("Berries - " + userInventory.getItemCount(Inventory.ItemType.BERRY));
-        appendToTextArea(berryDesc);
-        appendToTextArea("+========INVENTORY========+");
+        if (steps == randomTarget) {
+            steps = 0;
+            logic.chooseRandomZone();
+        }
     }
 
     private void handleMoveOrLook() {
@@ -111,7 +118,8 @@ public class GUI extends JFrame {
             case 10 -> {
                 appendToTextArea(">> It's a wild encounter!");
                 Pokemon opponent = userData.getCurrentZone().getZonePokemon().get(random.nextInt(10));
-                new Encounter(userInventory, opponent);
+                setButtons(false);
+                new WildEncounter(userInventory, opponent, this::reEnableButtons);
             }
         }
         steps++;
@@ -140,27 +148,6 @@ public class GUI extends JFrame {
         gameplay();
     }
 
-    private void checkZone() {
-        int randomTarget = random.nextInt(10, 21);
-        if (zoneChange) {
-            appendToTextArea("\n+========NEW ZONE ALERT========+");
-            appendToTextArea("Loading a new zone...");
-            Zone currentZone = userData.getCurrentZone();
-            appendToTextArea("Entering the " + currentZone.getZoneName() + " zone!");
-            appendToTextArea(currentZone.getZoneDesc());
-            appendToTextArea("Pokémon in this zone: ");
-            for (Pokemon p : currentZone.getZonePokemon()) {
-                appendToTextArea(p.nameAndType());
-            }
-            zoneChange = false;
-            appendToTextArea("+========NEW ZONE ALERT========+");
-        }
-        if (steps == randomTarget) {
-            steps = 0;
-            logic.chooseRandomZone();
-        }
-    }
-
     private void gameplay() {
         startTime = System.currentTimeMillis();
         logic = new GameLogic(userData, userInventory);
@@ -174,16 +161,12 @@ public class GUI extends JFrame {
             appendToTextArea("Limit of 100 steps has been reached!");
         }
         appendToTextArea("Your time in the Safari Zone has ended.");
-        displayStats();
-        displayInventory();
-        long end = System.currentTimeMillis();
-        long timeSpent = end - startTime;
-        long minutes = TimeUnit.MILLISECONDS.toMinutes(timeSpent);
-        long seconds = (TimeUnit.MILLISECONDS.toSeconds(timeSpent)) % 60;
-        displayTime(minutes, seconds);
-        moveButton.setEnabled(false);
-        statsButton.setEnabled(false);
-        inventoryButton.setEnabled(false);
+        endWindow();
+    }
+
+    private void endWindow() {
+        dispose();
+        new StatsGUI(userInventory, userData, startTime, System.currentTimeMillis());
     }
 
     public static void main(String[] args) {

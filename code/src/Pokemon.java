@@ -37,9 +37,7 @@ public class Pokemon {
         return result.toString();
     }
 
-    public String nameAndType() {
-        return name + " [" + type + "]";
-    }
+    public String nameAndType() { return name + " [" + type + "]"; }
 
     public String getName() { return name; }
 
