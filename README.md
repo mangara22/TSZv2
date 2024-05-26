@@ -1,5 +1,6 @@
 # TSZv2
 An improved implementation of my [TextSafariZone](https://github.com/mangara22/TextSafariZone).
+  - You can find a link to the Javadocs [here](https://mangara22.github.io/TSZv2/package-summary.html).
 
 ## What's improved?
   1. There are *2* improved implementations[^1] of my **TextSafariZone**, each has a different branch.
