@@ -39,18 +39,18 @@ public class StatsGUI extends JFrame {
 
         textArea.append("+--------POKÉMON CAUGHT--------+\n");
         if (userInventory.getCaughtPokemon().isEmpty()) {
-            textArea.append("No Pokémon caught yet.\n\n");
+            textArea.append("No Pokémon caught yet.\n");
         }
         else {
             for (Pokemon p : userInventory.getCaughtPokemon()) {
-                textArea.append(p.toString() + "\n\n");
+                textArea.append(p.toString() + "\n");
             }
         }
 
         textArea.append(calculateTime());
 
         panel.add(scrollPane, BorderLayout.CENTER);
-        panel.setBorder(BorderFactory.createLineBorder(new Color(127, 124, 175), 3));
+        panel.setBorder(BorderFactory.createLineBorder(new Color(114, 158, 161), 3));
         add(panel);
 
         setVisible(true);

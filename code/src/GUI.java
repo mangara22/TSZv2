@@ -73,7 +73,7 @@ public class GUI extends JFrame {
         statsButton.addActionListener(e -> new StatsGUI(userInventory, userData,
                 startTime, System.currentTimeMillis()));
         inventoryButton.addActionListener(e -> new InventoryGUI(userInventory));
-        endButton.addActionListener(e -> endWindow());
+        endButton.addActionListener(e -> endEarly());
 
         welcome();
     }
@@ -198,6 +198,7 @@ public class GUI extends JFrame {
         else if (status == 1) {
             reason += "\nYou reached the limit of 100 steps.";
         }
+        dispose();
         JOptionPane.showMessageDialog(this, "Your time in the Safari Zone has ended." + reason);
         endWindow();
     }
@@ -206,8 +207,15 @@ public class GUI extends JFrame {
      * Function that closes the main window and shows the Stats window upon game over.
      */
     private void endWindow() {
-        dispose();
         new StatsGUI(userInventory, userData, startTime, System.currentTimeMillis());
+    }
+
+    /**
+     * Function that ends the game early if the user presses the "end" button.
+     */
+    private void endEarly() {
+        dispose();
+        endWindow();
     }
 
     public static void main(String[] args) {

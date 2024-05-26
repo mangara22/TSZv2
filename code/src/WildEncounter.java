@@ -79,7 +79,7 @@ public class WildEncounter extends JFrame {
 
         panel.add(scrollPane, BorderLayout.CENTER);
         panel.add(buttonPanel, BorderLayout.SOUTH);
-        buttonPanel.setBackground(new Color(127, 124, 175));
+        buttonPanel.setBackground(new Color(126, 107, 143));
         add(panel);
 
         catchButton.addActionListener(e -> usePokeball());
@@ -120,21 +120,24 @@ public class WildEncounter extends JFrame {
     private void usePokeball() {
         if (userInventory.getItemCount(Inventory.ItemType.POKEBALL) > 0) {
             userInventory.decrementItem(Inventory.ItemType.POKEBALL);
-            if (fleeRate >= 4) {
+            if (fleeRate >= 4 || fleeRate < 0) {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " is " +
                         "too quick and ran away!");
                 dispose();
-            } else if (catchRate >= 3) {
+            }
+            else if (catchRate >= 3) {
                 JOptionPane.showMessageDialog(this, "You caught " + opponent.getName() + "!");
                 userInventory.getCaughtPokemon().add(opponent);
                 dispose();
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " broke " +
                         "out of the pokéball!");
                 fleeRate++;
                 catchRate--;
             }
-        } else {
+        }
+        else {
             JOptionPane.showMessageDialog(this, "You have no more pokéballs left!");
             dispose();
         }
@@ -146,19 +149,20 @@ public class WildEncounter extends JFrame {
     private void useBait() {
         if (userInventory.getItemCount(Inventory.ItemType.BAIT) > 0) {
             userInventory.decrementItem(Inventory.ItemType.BAIT);
-            if (fleeRate >= 4) {
+            if (fleeRate >= 4 || fleeRate < 0) {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " is " +
                         "too quick and ran away!");
                 dispose();
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " is " +
                         "distracted by the bait, intrigued by it.");
                 catchRate--;
                 fleeRate--;
             }
-        } else {
+        }
+        else {
             JOptionPane.showMessageDialog(this, "You have no more bait left!");
-            dispose();
         }
     }
 
@@ -168,19 +172,20 @@ public class WildEncounter extends JFrame {
     private void useMud() {
         if (userInventory.getItemCount(Inventory.ItemType.MUD) > 0) {
             userInventory.decrementItem(Inventory.ItemType.MUD);
-            if (fleeRate >= 4) {
+            if (fleeRate >= 4 || fleeRate < 0) {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " is " +
                         "too quick and ran away!");
                 dispose();
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " is annoyed " +
                         "by the mud and wants to flee!");
                 fleeRate++;
                 catchRate++;
             }
-        } else {
+        }
+        else {
             JOptionPane.showMessageDialog(this, "You have no more mud left!");
-            dispose();
         }
     }
 
@@ -190,19 +195,20 @@ public class WildEncounter extends JFrame {
     private void useBerry() {
         if (userInventory.getItemCount(Inventory.ItemType.BERRY) > 0) {
             userInventory.decrementItem(Inventory.ItemType.BERRY);
-            if (fleeRate >= 4) {
+            if (fleeRate >= 4 || fleeRate < 0) {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " is " +
                         "too quick and ran away!");
                 dispose();
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, opponent.getName() + " enjoys the berries, " +
                         "munching on them happily!");
                 catchRate++;
                 fleeRate--;
             }
-        } else {
+        }
+        else {
             JOptionPane.showMessageDialog(this, "You have no more berries left!");
-            dispose();
         }
     }
 }

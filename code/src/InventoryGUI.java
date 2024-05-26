@@ -32,8 +32,8 @@ public class InventoryGUI extends JFrame {
         JTable table = new JTable(data, columnNames);
         table.setFont(new Font("Century Gothic", Font.PLAIN, 12));
         table.getTableHeader().setFont(new Font("Century Gothic", Font.BOLD, 14));
-        table.getTableHeader().setBackground(new Color(127, 124, 175));
-        table.setGridColor(new Color(127, 124, 175));
+        table.getTableHeader().setBackground(new Color(87, 74, 226));
+        table.setGridColor(new Color(87, 74, 226));
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
 
