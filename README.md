@@ -1,11 +1,11 @@
 # TSZv2
 An improved implementation of my [TextSafariZone](https://github.com/mangara22/TextSafariZone).
-  - You can find a link to the Javadocs [here](https://mangara22.github.io/TSZv2/package-summary.html).
 
 ## What's improved?
   1. There are *2* improved implementations[^1] of my **TextSafariZone**, each has a different branch.
       1. `Console`: contains the improved TextSafariZone, with the only noticeable change being in the back-end where it's far more organized.
       2. `GUI`: contains the GUI implementation, built off of the `Console` branch. This uses `Java Swing` components.
+         - You can find a link to the Javadocs for the GUI implementation [here](https://mangara22.github.io/TSZv2/package-summary.html).
   3. Region data, such as *Kanto*, *Johto*, or *Mixed*, from before have been replaced with `.txt` files containing the first 50 Pokémon from each of the 9 generations.
       - This was done using a `Python` script to scrape data from [this website](https://pokemondb.net/pokedex/national) using `BeautifulSoup`
       - You can find the link to the repo [here](https://github.com/mangara22/PokemonWebScraping)
