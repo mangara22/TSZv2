@@ -7,8 +7,8 @@ An improved implementation of my [TextSafariZone](https://github.com/mangara22/T
       2. `GUI`: contains the GUI implementation, built off of the `Console` branch. This uses `Java Swing` components.
          - You can find a link to the Javadocs for the GUI implementation [here](https://mangara22.github.io/TSZv2/package-summary.html).
   3. Region data, such as *Kanto*, *Johto*, or *Mixed*, from before have been replaced with `.txt` files containing the first 50 Pokémon from each of the 9 generations.
-      - This was done using a `Python` script to scrape data from [this website](https://pokemondb.net/pokedex/national) using `BeautifulSoup`
-      - You can find the link to the repo [here](https://github.com/mangara22/PokemonWebScraping)
+      - This was done using a `Python` script to scrape data from [this website](https://pokemondb.net/pokedex/national) using `BeautifulSoup`.
+      - You can find the link to the repo [here](https://github.com/mangara22/PokemonWebScraping).
   4. The original implementation used one class for **everything**, so there are now multiple classes, each meant for one specific purpose (single responsibility).  
 [^1]: Note that some features have been removed/revised, such as display rates, but the core functionality still exists for both implementations.
 
