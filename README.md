@@ -16,5 +16,7 @@ An improved implementation of my [TextSafariZone](https://github.com/mangara22/T
 ### Console version of TextSafariZonev2
 <img width="1066" alt="consoleTSZ" src="https://github.com/mangara22/TSZv2/assets/125520397/f9fdb4ef-ffe1-4936-9b84-679bf168c04c">
 
+---
+
 ### GUI Version of TextSafariZonev2
 https://github.com/mangara22/TSZv2/assets/125520397/eaaa7645-026c-4f69-a38d-c1a6a74398ad
