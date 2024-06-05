@@ -1,5 +1,8 @@
 # TSZv2
 An improved implementation of my [TextSafariZone](https://github.com/mangara22/TextSafariZone).
+<div>
+  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjFmbjRtY3Jnc2x0MzRpNmVnajkyNGU1aTFya21nMDBuZWp1c252ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uWLJEGCSWdmvK/giphy.gif" width="300">
+</div>
 
 ## What's improved?
   1. There are *2* improved implementations[^1] of my **TextSafariZone**, each has a different branch.
