@@ -3,7 +3,7 @@
   <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjFmbjRtY3Jnc2x0MzRpNmVnajkyNGU1aTFya21nMDBuZWp1c252ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uWLJEGCSWdmvK/giphy.gif" width="300">
 </div>
 
-An improved implementation of my [TextSafariZone](https://github.com/mangara22/TextSafariZone).
+An improved implementation of my [TextSafariZone](https://github.com/mangara22/TextSafariZone), which was a text-based representation of the [Safari Zone](https://bulbapedia.bulbagarden.net/wiki/Safari_Zone) from the Pokémon games, where the player can explore and catch wild Pokémon.
 
 ## What's improved?
   1. There are *2* improved implementations[^1] of my **TextSafariZone**, each has a different branch.
